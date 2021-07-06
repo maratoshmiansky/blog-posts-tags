@@ -22,7 +22,7 @@ class TagsController < ApplicationController
 
   def update
     tag = Tag.find(params[:id])
-    tag.title = params[:name] || tag.name
+    tag.name = params[:name] || tag.name
     if tag.save
       render json: tag
     else
